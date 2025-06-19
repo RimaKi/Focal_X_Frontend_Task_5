@@ -51,21 +51,19 @@ footer {
     
 }
 
-.carousel-item {
-    max-width: 345px;
-    /* min-height: 334px; */
-}
+
+
 
 .card {
     padding: 32px;
-    width: 100%;
-    height: 100%;
+    max-width: 345px;
+    min-height: 334px;
     border-radius: 20px;
+    margin: auto;
 
 
     img{
         width: 129px;
-        height: 130px;
     }
     h2 {
         font-size: 18px;
@@ -76,6 +74,26 @@ footer {
         font-size: var(--MyLittleFont);
     }
 }
+
+.carousel-indicators {
+    bottom: unset !important;
+    margin-top: 40px !important;
+    align-items: center;
+    
+}
+
+.carousel-indicators button[data-bs-target] {
+    width: 16px !important;
+    height: 16px !important;
+    border: 3px solid #8EADD5;
+}
+
+.carousel-indicators .active {
+    width: 24px !important;
+    height: 24px !important;
+    background-color: #8EADD5;
+    border: none;
+} 
 
 @media screen and (min-width:992px) {
 
@@ -145,26 +163,46 @@ footer {
             margin-bottom: 38.65px !important;
         }
 
-        .carousel-item.active {
-        
-            + .carousel-item {
-                /* خصائص CSS هنا */
-                display: block !important;
-                
-                transform: translateX(100% );
-                margin-left: 15px;
-                
-    
-                + .carousel-item {
-                    display: block !important;
-                    transform: translateX(200%);
-                    margin-left: 30px;
-                    
+        .gridSlid {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(( (100% - 30px ) / 3 )); 
+            justify-items: start;
+            column-gap: 15px;
+
+            .carousel-item {
+                display: block;
+                max-width: 345px;
+                min-height: 334px;
+
+                .card {
+                    max-width: 100%;
+                    min-height: 100%;
+                    object-fit: contain;
                 }
             }
         }
         
+
         
+        #carouselExampleIndicators:has(button[data-bs-slide-to="0"].active) {
+            .carousel-item {
+                transform: translateX(0%) !important;
+            }
+        }
+
+        #carouselExampleIndicators:has(button[data-bs-slide-to="1"].active) {
+            .carousel-item {
+                transform: translateX(calc(-100%)) !important;
+            }
+        }
+
+        #carouselExampleIndicators:has(button[data-bs-slide-to="2"].active) {
+            .carousel-item {
+                transform: translateX(calc(-200%)) !important;
+            }
+        }
+
     }    
     
     #contactUs {
