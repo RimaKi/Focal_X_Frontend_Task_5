@@ -145,38 +145,27 @@ footer {
             margin-bottom: 38.65px !important;
         }
 
+        .carousel-item.active {
         
-        .slider {
-            /* width: 73.9583vw; */
-        }
-        
-        /* .carousel-item {
-            display: block;
-        }  */
-
-        
-    }
-
-    .carousel-item.active {
-        
-        + .carousel-item {
-            /* خصائص CSS هنا */
-            display: block !important;
-            
-            transform: translateX(100% );
-            margin-left: 15px;
-            
-
-            +.carousel-item {
+            + .carousel-item {
+                /* خصائص CSS هنا */
                 display: block !important;
-                transform: translateX(200%);
-                margin-left: 30px;
                 
+                transform: translateX(100% );
+                margin-left: 15px;
+                
+    
+                + .carousel-item {
+                    display: block !important;
+                    transform: translateX(200%);
+                    margin-left: 30px;
+                    
+                }
             }
         }
-    }
-    
-    
+        
+        
+    }    
     
     #contactUs {
         margin-bottom: 136px !important;
