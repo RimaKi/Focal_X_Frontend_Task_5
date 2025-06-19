@@ -166,20 +166,18 @@ footer {
         .gridSlid {
             display: grid;
             grid-auto-flow: column;
-            grid-auto-columns: calc(( (100% - 30px ) / 3 )); 
+            grid-auto-columns: calc(( (100% - 45px ) / 3 )); 
             justify-items: start;
             column-gap: 15px;
 
+            .card {
+                max-width: 100%;
+                min-height: 100%;
+                object-fit: contain;
+            }
+
             .carousel-item {
                 display: block;
-                max-width: 345px;
-                min-height: 334px;
-
-                .card {
-                    max-width: 100%;
-                    min-height: 100%;
-                    object-fit: contain;
-                }
             }
         }
         
